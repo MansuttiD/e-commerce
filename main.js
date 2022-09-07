@@ -112,8 +112,11 @@ contentCartBody.addEventListener("click", (e) => {
         const idProduct = +e.target.parentElement.id;
         
         
-        if (cart[idProduct].amount > 1) {
+        if (cart[idProduct].amount > 0) {
             cart[idProduct].amount--;
+        }
+        if (cart[idProduct].amount == 0) {
+            delete cart[idProduct];
         }
     }
 
